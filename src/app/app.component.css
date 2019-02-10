@@ -1,9 +1,19 @@
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+.credits{
+  padding-top:1rem;
+}
+.nav-tabs{
+  margin-bottom:0;
+}
+.content{
+  padding:25px;
+}
+.white{
+  background-color: rgba(255,255,255,0.7) !important;
+}
+.tabs{
+  background-color: transparent;
 }
 
-.example-full-width {
-  width: 100%;
+.header{
+  padding:10px;
 }

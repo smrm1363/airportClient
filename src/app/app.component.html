@@ -1,4 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-<ng-autocomplete (selected)="Selected($event)" ></ng-autocomplete>
+<div class="container">
+  <div class="col-sm-3 col-md-6">
+<h5>Origin</h5>
+<div class="row">
+  <div class="col s12 l6">
+    <ngx-select-dropdown tabindex="0" [multiple]="false" [(ngModel)]="originSelect" [config]="config" [options]="locations" (change)="changeValueOrigin(originSelect[0])"></ngx-select-dropdown>
+  </div>
+</div>
+    <div >
+      <h5>Destination</h5>
+      <div class="row">
+        <div class="col s12 l6">
+          <ngx-select-dropdown tabindex="0" [multiple]="false" [(ngModel)]="destSelect" [config]="config" [options]="locations" (change)="changeValueDest(destSelect[0])"></ngx-select-dropdown>
+        </div>
+      </div>
+  <!--<div class="col s12 l6 flow-text">-->
+    <!--<p style="margin: 0;">Balance of selected user: {{singleSelect?singleSelect[0]?.balance:''}}</p>-->
+  <!--</div>-->
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="getFare()">Primary</button>
 </div>
