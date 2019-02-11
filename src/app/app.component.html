@@ -3,21 +3,29 @@
 <h5>Origin</h5>
 <div class="row">
   <div class="col s12 l6">
-    <ngx-select-dropdown tabindex="0" [multiple]="false" [(ngModel)]="originSelect" [config]="config" [options]="locations" (change)="changeValueOrigin(originSelect[0])"></ngx-select-dropdown>
+    <ngx-select-dropdown tabindex="0" [multiple]="false" [(ngModel)]="originSelect" [config]="config" [options]="locationsOrigin" (change)="changeValueOrigin(originSelect[0])" (input)="onSearchChangeOrigin($event.target.value)"></ngx-select-dropdown>
   </div>
 </div>
     <div >
       <h5>Destination</h5>
       <div class="row">
         <div class="col s12 l6">
-          <ngx-select-dropdown tabindex="0" [multiple]="false" [(ngModel)]="destSelect" [config]="config" [options]="locations" (change)="changeValueDest(destSelect[0])"></ngx-select-dropdown>
+          <ngx-select-dropdown tabindex="0" [multiple]="false" [(ngModel)]="destSelect" [config]="config" [options]="locationsDest" (change)="changeValueDest(destSelect[0])" (input)="onSearchChangeDest($event.target.value)"></ngx-select-dropdown>
         </div>
       </div>
-  <!--<div class="col s12 l6 flow-text">-->
-    <!--<p style="margin: 0;">Balance of selected user: {{singleSelect?singleSelect[0]?.balance:''}}</p>-->
-  <!--</div>-->
-    </div>
+      </div>
   </div>
 
-  <button type="button" class="btn btn-primary" (click)="getFare()">Primary</button>
+  <button type="button" class="btn btn-success" (click)="getFare()">Get Fare</button>
+<div class="container bg-primary text-white">
+  <div >
+    <label >fare  : {{ fareValue}} {{currency}}</label>
+  </div>
+  <div>
+    <label>From Origin  : {{ originName}}  With code {{originCode}}  Latitude : {{originLat}}  Longitude : {{originLong}}</label>
+  </div>
+  <div>
+    <label>To Destination  : {{ destName}}  With code {{destCode}}  Latitude : {{destLat}}  Longitude : {{destLong}}</label>
+  </div>
+</div>
 </div>
